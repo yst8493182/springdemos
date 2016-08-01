@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="userDao" class="yangst.dao.impl.ObjectFactory" factory-method="createUser">
-        <!-- collaborators and configuration for this bean go here -->
+        <!--factory-method生成对象的工厂类的静态方法 -->
     </bean>
 
 </beans>
