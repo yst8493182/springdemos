@@ -10,7 +10,7 @@ public class ObjectFactory {
     private static Logger logger = Logger.getLogger(ObjectFactory.class);
 
     public static UserDao createUser() {
-        logger.info("使用工厂类创建");
+        logger.info("使用工厂类静态方法创建");
         return new UserDaoImpl("admin");
     }
 }

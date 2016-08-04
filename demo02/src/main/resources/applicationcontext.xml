@@ -7,4 +7,10 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <!--factory-method生成对象的工厂类的静态方法 -->
     </bean>
 
+
+    <bean id="factory1" class="yangst.dao.impl.ObjectFactory1"/>
+
+    <bean id="userDao1" factory-bean="factory1"  factory-method="createUser" />
+
+
 </beans>

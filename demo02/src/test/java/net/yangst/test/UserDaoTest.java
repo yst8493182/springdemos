@@ -18,4 +18,11 @@ public class UserDaoTest {
         userDao.selectByName();
     }
 
+    @Test
+    public void testSelectByName1(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationcontext.xml");
+        UserDao userDao = (UserDao) applicationContext.getBean("userDao1");
+        userDao.selectByName();
+    }
+
 }
