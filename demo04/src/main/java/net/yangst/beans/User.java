@@ -25,6 +25,17 @@ public class User {
     private int level;
 
 
+    public User(String username, String password, String createTime, float score, int level) {
+        this.username = username;
+        this.password = password;
+        this.createTime = createTime;
+        this.score = score;
+        this.level = level;
+    }
+
+    public User() {
+    }
+
     public String getUsername() {
         return username;
     }

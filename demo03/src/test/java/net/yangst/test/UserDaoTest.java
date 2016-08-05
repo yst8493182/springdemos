@@ -39,6 +39,8 @@ public class UserDaoTest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationcontext.xml");
         User user = (User) applicationContext.getBean("user");
 
+
+
         //关闭容器
         AbstractApplicationContext abstractApplicationContext=(AbstractApplicationContext) applicationContext;
         abstractApplicationContext.close();

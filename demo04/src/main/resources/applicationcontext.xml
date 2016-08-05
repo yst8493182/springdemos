@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!--常量注入-->
+    <bean id="userWithConstant" class="net.yangst.beans.User">
+        <property name="username" value="admin"/>
+        <property name="password" value="admin123"/>
+        <property name="level" value="1"/>
+        <property name="score" value="25.5"/>
+    </bean>
+
+
+    <!--构造器注入-->
+    <bean id="userWithConstructure" class="net.yangst.beans.User">
+        <constructor-arg index="0" value="guest"/>
+        <constructor-arg index="1" value="123456"/>
+        <constructor-arg index="2" value="2016-07-18"/>
+        <constructor-arg index="3" value="25.5"/>
+        <constructor-arg index="4" value="5"/>
+    </bean>
+
+
+    <!--外部bean注入-->
+    <bean id="userdaoOut" class="net.yangst.dao.impl.UserDaoImpl">
+        <constructor-arg index="0" ref="userWithConstructure"/>
+    </bean>
+
+
+    <!--内部bean注入-->
+    <bean id="userDaoInner" class="net.yangst.dao.impl.UserDaoImpl">
+        <property name="user">
+            <bean class="net.yangst.beans.User">
+                <constructor-arg index="0" value="root"/>
+                <constructor-arg index="1" value="123456"/>
+                <constructor-arg index="2" value="2016-07-18"/>
+                <constructor-arg index="3" value="25.5"/>
+                <constructor-arg index="4" value="5"/>
+            </bean>
+        </property>
+    </bean>
+
+
+</beans>
