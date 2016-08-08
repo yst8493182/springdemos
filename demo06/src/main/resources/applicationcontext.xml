@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="userService" class="net.yangst.service.impl.UserServiceImpl"/>
+    <!--默认指定Resource的未指定name-->
+    <!--<bean id="userDao" class="net.yangst.dao.impl.UserDaoImpl"/>-->
+    <!--指定Resource的name的值-->
+    <!--<bean id="userDao1" class="net.yangst.dao.impl.UserDaoImpl"/>-->
+    <!--根据接口对应的类型来注入-->
+    <bean id="userDao3" class="net.yangst.dao.impl.UserDaoImpl"/>
+
+</beans>
