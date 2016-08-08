@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="collection" class="net.yangst.beans.Collection">
+
+        <!--list集合注入-->
+        <property name="list">
+            <list>
+                <value>A</value>
+                <value>b</value>
+                <value>C</value>
+                <value>d</value>
+            </list>
+        </property>
+
+        <!--Map集合注入-->
+        <property name="map">
+            <map>
+
+                <entry key="name" value="redmi3"/>
+                <entry key="price" value="999"/>
+            </map>
+        </property>
+
+        <!--Set集合注入-->
+        <property name="set">
+            <set>
+                <value>a</value>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </set>
+
+        </property>
+
+        <!--Properties注入-->
+        <property name="properties">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="passwd">1234</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>
