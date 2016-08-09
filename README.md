@@ -11,3 +11,6 @@
 ## demo06 注解注入@Resource
 
 ## demo07 注解注入@Autowired
+
+## demo07 扫描注解和spring、junit4整合
+
