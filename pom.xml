@@ -16,6 +16,7 @@
         <module>demo05</module>
         <module>demo06</module>
         <module>demo07</module>
+        <module>demo08</module>
     </modules>
 
     <properties>
@@ -52,6 +53,13 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${springversion}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
             <version>${springversion}</version>
         </dependency>
 
