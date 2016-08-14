@@ -16,7 +16,12 @@
 
 ## demo09 Jdk的动态代理和Cglib的动态代理
 
-## demo10 aop编程（xml配置方式）
+## demo10 aop编程
+
+## demo11 五种通知（xml配置）
+
+## demo11 五种通知（注解）
+
 
 
 
