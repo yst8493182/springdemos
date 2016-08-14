@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+             http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="myAspectId" class="net.yangst.aspect.MyAspect"/>
+    <bean id="userDao" class="net.yangst.dao.impl.UserDaoImpl"/>
+
+    <aop:config>
+        <aop:pointcut id="myPointCut" expression="execution(* net.yangst.dao..*.*(..))"/>
+        <aop:aspect id="myCutPoint" ref="myAspectId">
+            <!--前置通知-->
+            <aop:before method="myBefore" pointcut-ref="myPointCut"/>
+
+            <!--后置通过-->
+            <!--
+            <aop:after-returning
+                    method="" ：后置通知对应的切面类中的方法名
+                    returning="" ：返回 类型为Object的，后置通知方法中的配置的返回的变量的名
+                    pointcut-ref="myPointCut" ：切点
+            />
+            -->
+
+            <aop:after-returning method="myAfter" pointcut-ref="myPointCut" returning="returnObj"/>
+
+
+        </aop:aspect>
+
+        <!--定义切点-->
+    </aop:config>
+
+
+</beans>
