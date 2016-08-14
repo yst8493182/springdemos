@@ -17,6 +17,7 @@
         <module>demo06</module>
         <module>demo07</module>
         <module>demo08</module>
+        <module>demo09</module>
     </modules>
 
     <properties>
@@ -70,6 +71,20 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>3.2</version>
+        </dependency>
+
 
 
         <dependency>
