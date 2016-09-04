@@ -22,6 +22,20 @@
 
 ## demo11 五种通知（注解）
 
+## demo13 spring的JdbcTemplate
+
+## demo15 spring 手动配置事物管理器
+
+## demo16 spring 半自动配置事物管理器（通过代理工厂类TransactionProxyFactoryBean）
+
+## demo17 spring 自动配置事物管理器
+
+## demo17 spring 注解方式自动配置事物管理器
+
+
+
+
+
 
 
 

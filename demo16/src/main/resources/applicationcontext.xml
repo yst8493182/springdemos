@@ -32,18 +32,40 @@
         <property name="transactionManager" ref="txManager"/>
     </bean>
 
+    <!-- 4 service 代理对象
+        4.1 proxyInterfaces 接口
+        4.2 target 目标类
+        4.3 transactionManager 事务管理器
+        4.4 transactionAttributes 事务属性（事务详情）
+            prop.key ：确定哪些方法使用当前事务配置
+            prop.text:用于配置事务详情
+                格式：PROPAGATION,ISOLATION,readOnly,-Exception,+Exception
+                    传播行为		隔离级别	是否只读		异常回滚		异常提交
+                例如：
+                    <prop key="transfer">PROPAGATION_REQUIRED,ISOLATION_DEFAULT</prop> 默认传播行为，和隔离级别
+                    <prop key="transfer">PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly</prop> 只读
+                    <prop key="transfer">PROPAGATION_REQUIRED,ISOLATION_DEFAULT,+java.lang.ArithmeticException</prop>  有异常扔提交
+    -->
+
+
+    <bean id="proxyAmountService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="target" ref="amountService"/>
+        <property name="proxyInterfaces" value="net.yangst.service.AmountService"/>
+        <property name="transactionManager" ref="txManager"/>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="tranfer">PROPAGATION_REQUIRED,ISOLATION_DEFAULT</prop>
+            </props>
+
+        </property>
+    </bean>
 
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSourceId"/>
-
-
     </bean>
 
-    <!--service中需要注入事物模板-->
     <bean id="amountService" class="net.yangst.service.impl.AmountServiceImpl">
         <property name="amountDao" ref="amountDao"/>
-        <property name="transactionTemplate" ref="transactionTemplate"/>
-
     </bean>
 
 

@@ -24,6 +24,9 @@
         <module>demo13</module>
         <module>demo14</module>
         <module>demo15</module>
+        <module>demo16</module>
+        <module>demo17</module>
+        <module>demo18</module>
     </modules>
 
     <properties>
